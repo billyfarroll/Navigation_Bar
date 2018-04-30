@@ -1,0 +1,94 @@
+body {
+  background-color: black;  
+ }
+
+.background {
+   height: 1900px; 
+   background-image: url('http://www.strawberryproofing.co.uk/images/city.png');
+  background-repeat: no-repeat;
+  
+}
+
+.navigation_bar{
+  position: absolute;
+  z-index: 2;
+  height: 70px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.menu_bar{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  
+}
+
+
+.link {
+ 
+  position:relative;
+  color: white;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding: 0 20px;
+  font-size: 21px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  border: 1px solid rgba(7, 134, 252, 0.5);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  
+}
+
+.link:hover {
+  border: 1px solid rgba(7, 134, 252,0);
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.link::before, .link::after {
+  width: 100%;
+  height:100%;
+  z-index: 3;
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  box-sizing: border-box;
+  -webkit-transform: scale(0); /*This is what changes the scale from 0 - 1*/
+  transition: 0.5s;
+}
+
+.cover::before {
+  border-bottom: 2px solid #a33aff;
+  border-left: 2px solid #a33aff;
+  -webkit-transform-origin: 100% 0%; /* Start 0 */
+}
+
+.cover::after {
+  border-top: 2px solid #a33aff;
+  border-right: 2px solid #a33aff;
+  -webkit-transform-origin: 0% 100%; /* End 100 */
+}
+
+.link:hover::after, .link:hover::before {
+  -webkit-transform: scale(1); /*make the hover appear in scale*/
+}
+
+
+@media only screen and (max-width: 410px) {
+  
+  .menu_bar{
+    
+    justify-content: center; 
+   }
+
+}
